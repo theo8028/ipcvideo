@@ -1,5 +1,5 @@
 # Open IPC Video
-Open source ipc(interprocess communication)-based real-time video data sharing library.
+Open source ipc(interprocess communication)-based low latency video data sharing library.
 
 ## License
 Unless otherwise mentioned, the samples are released under the [MIT license]
