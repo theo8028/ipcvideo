@@ -265,7 +265,7 @@ static PyObject* write(PyObject* self, PyObject* args, PyObject* argsKey)
             const npy_intp* _strides = PyArray_STRIDES(oarr);
             npy_intp* _shape =  PyArray_SHAPE(oarr);
 
-            int ndims = _strides[1];
+            int ndims = (int)_strides[1];
             int imgWidth  = (int)_shape[1];
             int imgHeight = (int)_shape[0];
             int imgDepth  = ndims;
