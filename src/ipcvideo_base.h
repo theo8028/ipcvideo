@@ -23,22 +23,22 @@
 
 struct ShareMemHeader
 {
-	short 	 headerSize;
-	int 	 frameCount;
-	int 	 InitKeyCode; 		 // first run check
-	int 	 imgSize;
-	int 	 imgWidth;
-	int 	 imgHeight;
-	int      imgDepth;
-	int 	 pixelFormat;
-	timespec time;
-	int 	 referenceCount;
+  short    headerSize;
+  int      frameID;
+  int      InitKeyCode; 		 // first run check
+  int      imgSize;
+  int      imgWidth;
+  int      imgHeight;
+  int      imgDepth;
+  int      pixelFormat;
+  timespec time;
+  int      referenceCount;
 };
 
 struct ShareMemTail
 {
-	short headerSize;
-	int frameCount;
+  short headerSize;
+  int frameID;
 };
 
 #pragma pack(pop) 
@@ -46,7 +46,7 @@ struct ShareMemTail
 bool openShareVideo(const char *szIpcName);
 bool writeShareVideo(int ch,char *pMemVideo,int bufSize, int imgWidth, int imgHeight,int imgDepth,int pixelFormat=0,int *pFrameCount=NULL);
 int  readShareVideo(int ch,char *pDestImg, int bufSize, int *pImgWidth, int *pImgHeight,
-					       int *pImgDepth,int *pImgFmt,int *pFrameCount ,double *pLatencySec);
+                    int *pImgDepth,int *pImgFmt,int *pFrameCount ,double *pLatencySec);
 bool getImageInfo(int ch,int* pImgWidth, int* pImgHeight,int *pImgDepth,int *pPixelFmt);
 bool isOpenedShareVideo();
 bool closeShareVideo();

@@ -25,7 +25,7 @@ if ipcv.open("IPCVIDEO") :
 
     randColor=[random.randrange(0,255),random.randrange(0,255),random.randrange(0,255)]
     imgTx = np.full((imgHeight, imgWidth, 3),randColor,np.uint8)
-    print("\nunittest 2 : channel 1 tx rx")
+    print("\nunittest 2 : channel 1 tx/rx")
     print(" : ipcv.write(imgColor,1)")
     ipcv.write(imgTx,1)
     imgRx=ipcv.read(1)
