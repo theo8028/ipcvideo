@@ -1,0 +1,59 @@
+﻿<Window x:Class="IPCVideoWpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IPCVideoWpf"
+        mc:Ignorable="d"
+        Title="IPC Video Wpf Demo" Height="540" Width="960" Background="WhiteSmoke" Loaded="Window_Loaded" Closing="Window_Closing" >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70" />
+            <RowDefinition />
+            <RowDefinition Height="70"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Background="WhiteSmoke" Margin="2,2,1,2">
+            <GroupBox Header="" Background="WhiteSmoke" >
+                <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+                    <Label HorizontalAlignment="Left" VerticalAlignment="Center">IPC Name</Label>
+                    <ComboBox x:Name="comboxIpcName"  HorizontalAlignment="Left" Margin="10,10,0,10" Width="240" SelectionChanged="comboxIpcName_SelectionChanged"  />
+                    <Label Name="labelIPCVideoOpenStatus" HorizontalAlignment="Left" VerticalAlignment="Center">...</Label>
+                </StackPanel>
+            </GroupBox>
+        </Grid>
+
+        <Grid  Grid.Row="1" Grid.Column="0" Background="LightGray" Margin="2,2,1,2">
+            <Image x:Name="VideoTx" HorizontalAlignment="Center"  VerticalAlignment="Center"/>
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="1" Background="LightGray" Margin="1,2,2,2">
+            <Image x:Name="VideoRx" HorizontalAlignment="Center"  VerticalAlignment="Center" />
+        </Grid>
+
+        <Grid  Grid.Row="2" Grid.Column="0" Background="WhiteSmoke" Margin="2,2,1,2">
+            <GroupBox Header="Video Tx" >
+                <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+                    <Label HorizontalAlignment="Left" VerticalAlignment="Center">Channel</Label>
+                    <ComboBox x:Name="comboxTxChannel"  IsReadOnly="true"  HorizontalAlignment="Left" Margin="10,10,0,10" Width="60" SelectionChanged="comboxTxChannel_SelectionChanged"  />
+                    <Label HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50,10,0,10" >Tx Interval</Label>
+                    <ComboBox x:Name="comboxTxInterval"  IsReadOnly="true" HorizontalAlignment="Left" Margin="10,10,0,10" Width="120" SelectionChanged="comboxTxInterval_SelectionChanged" />
+                </StackPanel>
+            </GroupBox>
+        </Grid>
+
+        <Grid  Grid.Row="2" Grid.Column="1" Background=  "WhiteSmoke" Margin="2,2,1,2">
+            <GroupBox Header="Video Rx" Background="WhiteSmoke" >
+                <StackPanel Grid.Row="0" DockPanel.Dock="Top" Orientation="Horizontal" >
+                    <Label HorizontalAlignment="Left" VerticalAlignment="Center"  Width="60" >Channel :</Label>
+                    <ComboBox x:Name="comboxRxChannel"  IsReadOnly="true" HorizontalAlignment="Left" Margin="10,10,0,10" Width="60" SelectionChanged="comboxRxChannel_SelectionChanged"/>
+                    <Label  x:Name="labelRxMsg" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,0,0">...</Label>
+                </StackPanel>
+            </GroupBox>
+        </Grid>
+
+    </Grid>
+</Window>
