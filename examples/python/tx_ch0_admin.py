@@ -3,7 +3,7 @@ import ipcvideo as ipcv
 import numpy as np
 import random
 
-ch = 1
+ch = 0
 imgWidth=1024
 imgHeight=768
     
